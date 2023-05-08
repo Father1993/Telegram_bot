@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 
 url = "https://habr.com/ru/news/"
 API_KEY = "TOKEN"
-url2 = "https://www.gismeteo.ru/weather-khabarovsk-4862/"
 
 headers = {
     "Accept": "*/*",
