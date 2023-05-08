@@ -5,7 +5,7 @@ from telebot import types
 from bs4 import BeautifulSoup
 
 url = "https://habr.com/ru/news/"
-API_KEY = "6224719907:AAFhsVDHrjGMhAmEg920LCMdH9aay2iQmjQ"
+API_KEY = "TOKEN"
 url2 = "https://www.gismeteo.ru/weather-khabarovsk-4862/"
 
 headers = {
@@ -13,7 +13,7 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
 }
 
-proxies = {"https": f"http://YemFds:2d6wdt@194.67.218.216:9101"}
+proxies = {"https": f"http://login:password@ip:port"}
 
 
 def parser(url):
