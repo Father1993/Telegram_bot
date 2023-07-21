@@ -1,6 +1,7 @@
 import requests
 import telebot
 import random
+import time
 from telebot import types
 from bs4 import BeautifulSoup
 
@@ -49,16 +50,20 @@ def hello(message):
 @bot.message_handler(content_types=["text"])
 def popular_news(message):
     if message.text == "NEWS":
-        bot.send_message(message.chat.id, list_news[0], reply_markup=keyboard())
-        del list_news[0]
-
+        for i in list_news:
+            bot.send_message(message.chat.id, list_news[0])
+            del list_news[0]
+            time.sleep(7000)
+    elif message.text == "Кинуть кубик":
+        bot.send_dice(message.chat.id, reply_markup=keyboard())
 
 def keyboard():
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
     btn1 = types.KeyboardButton("NEWS")
-    btn2 = types.KeyboardButton("Узнать погоду")
-    markup.add(btn1)
+    btn2 = types.KeyboardButton("Кинуть кубик")
+    markup.add(btn1,btn2)
     return markup
 
 
 bot.polling()
+
